@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Summary | Concept Notes</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="about.html">FIELDNOTES <span>/ LEARN</span></a>
+    <nav aria-label="Main navigation"><a href="about.html">About</a><a href="test.html">Test</a></nav>
+  </header>
+  <main class="page-grid">
+    <aside class="side-label"><span>04 / RESULT</span><span>GIT BASICS</span></aside>
+    <section class="content">
+      <p class="eyebrow">Response verified</p>
+      <h1>Your notes,<br>kept together.</h1>
+      <dl class="result-meta">
+        <div><dt>NAME</dt><dd id="result-name">Loading...</dd></div>
+        <div><dt>EMAIL</dt><dd id="result-email">Loading...</dd></div>
+      </dl>
+      <section class="summary-block" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Your summary</h2>
+        <p id="result-summary" class="summary-text">Loading...</p>
+      </section>
+      <p id="empty-state" class="empty-state" hidden>No verified summary is available in this tab yet.</p>
+      <a class="primary-link" href="about.html">Read the concept again <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer>CONCEPT NOTES <span>04 — COMPLETE</span></footer>
+  <script>
+    const name = sessionStorage.getItem("conceptSummary.name");
+    const email = sessionStorage.getItem("conceptSummary.email");
+    const summary = sessionStorage.getItem("conceptSummary.text");
+    if (name && email && summary) {
+      document.getElementById("result-name").textContent = name;
+      document.getElementById("result-email").textContent = email;
+      document.getElementById("result-summary").textContent = summary;
+    } else {
+      document.getElementById("result-name").textContent = "—";
+      document.getElementById("result-email").textContent = "—";
+      document.getElementById("result-summary").textContent = "—";
+      document.getElementById("empty-state").hidden = false;
+    }
+  </script>
+</body>
+</html>

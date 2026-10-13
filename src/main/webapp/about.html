@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Git | Concept Notes</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="about.html">FIELDNOTES <span>/ LEARN</span></a>
+    <nav aria-label="Main navigation"><a class="active" href="about.html">About</a><a href="test.html">Test</a></nav>
+  </header>
+  <main class="page-grid">
+    <aside class="side-label"><span>01 / CONCEPT</span><span>VERSION CONTROL</span></aside>
+    <article class="content">
+      <p class="eyebrow">A short field guide</p>
+      <h1>Git keeps a record<br>of how work changes.</h1>
+      <p class="intro">Git is a version control system. It lets a developer save named snapshots of a project, compare edits, and return to an earlier state when needed.</p>
+      <div class="concept-visual" role="img" aria-label="Three steps in a Git workflow: edit, stage, commit">
+        <div><span class="step-number">01</span><strong>Working tree</strong><small>Edit a file</small></div>
+        <b aria-hidden="true">→</b>
+        <div><span class="step-number">02</span><strong>Staging area</strong><small>Choose changes</small></div>
+        <b aria-hidden="true">→</b>
+        <div><span class="step-number">03</span><strong>Repository</strong><small>Save a commit</small></div>
+      </div>
+      <section class="reading" aria-labelledby="details-heading">
+        <h2 id="details-heading">The three places to know</h2>
+        <p><strong>Working tree:</strong> the files you are currently editing. Git reports edits here as modified, and new files as untracked.</p>
+        <p><strong>Staging area:</strong> the changes selected for your next snapshot. <code>git add</code> moves changes here.</p>
+        <p><strong>Repository:</strong> the saved project history. <code>git commit</code> records what is staged with a message describing the change.</p>
+        <p>A useful routine is to check <code>git status</code>, inspect edits with <code>git diff</code>, stage the intended files, review the staged diff, and commit.</p>
+      </section>
+      <a class="primary-link" href="test.html">Take the summary test <span aria-hidden="true">↗</span></a>
+    </article>
+  </main>
+  <footer>CONCEPT NOTES <span>01 — GIT BASICS</span></footer>
+</body>
+</html>

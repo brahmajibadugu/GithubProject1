@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summary Test | Concept Notes</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="about.html">FIELDNOTES <span>/ LEARN</span></a>
+    <nav aria-label="Main navigation"><a href="about.html">About</a><a class="active" href="test.html">Test</a></nav>
+  </header>
+  <main class="page-grid">
+    <aside class="side-label"><span>02 / RESPONSE</span><span>GIT BASICS</span></aside>
+    <section class="content form-content">
+      <p class="eyebrow">Your turn</p>
+      <h1>Put it in<br>your own words.</h1>
+      <p class="intro">Summarize how Git moves a change from your working tree into the project history.</p>
+      <form class="response-form" action="verify.jsp" method="post" accept-charset="UTF-8">
+        <label for="name">Name <span>Capital first letter; fewer than 10 characters</span></label>
+        <input id="name" name="name" type="text" maxlength="9" autocomplete="name" placeholder="e.g. Alex" required>
+
+        <label for="email">Email address <span>Use a Gmail address</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="alex@gmail.com" required>
+
+        <label for="summary">Your summary <span>Explain the working tree, staging area, and commit</span></label>
+        <textarea id="summary" name="summary" rows="6" maxlength="2000" placeholder="Write your summary here..." required></textarea>
+
+        <button class="primary-button" type="submit">Submit for verification <span aria-hidden="true">→</span></button>
+      </form>
+      <a class="quiet-link" href="about.html">← Back to the concept</a>
+    </section>
+  </main>
+  <footer>CONCEPT NOTES <span>02 — YOUR SUMMARY</span></footer>
+</body>
+</html>
