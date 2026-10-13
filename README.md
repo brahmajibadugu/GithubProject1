@@ -21,6 +21,8 @@ The verification page accepts a name that begins with a capital letter and is sh
 
 Git identity is configured for this repository only; it does not change the global Git configuration.
 
+In `git status --short`, `??` marks an untracked file, `A` marks a staged new file, and `M` marks a modified tracked file.
+
 ```powershell
 git init
 git config user.name "Developer One"
