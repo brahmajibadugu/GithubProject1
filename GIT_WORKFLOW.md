@@ -44,3 +44,47 @@ The first `git diff` shows unstaged changes. After `git add`, `git diff --cached
 ```powershell
 git log --all --pretty=format:"%h | %an | <%ae> | %s"
 ```
+
+## 5. Scenario: Undo a mistaken commit without losing work
+
+Imagine you just committed a temporary change and realize it should not be part of the project yet. You can move the last commit back into the working area, inspect it, and decide what to keep.
+
+```powershell
+echo "temporary draft" >> notes.txt
+git add notes.txt
+git commit -m "Add temporary draft notes"
+git log --oneline -n 2
+git reset --soft HEAD~1
+git status --short
+```
+
+`git reset --soft HEAD~1` moves the latest commit back to the staging area instead of deleting it entirely, so the work remains available. You can then review the change, adjust it, and either recommit or discard it.
+
+```powershell
+git diff --cached
+# If the change is not needed:
+git restore --staged notes.txt
+git restore notes.txt
+```
+
+This pattern is useful when a commit was made too early or with the wrong content. It lets you correct the mistake while keeping the work in your local repository.
+
+## 6. Scenario: Unstage a file before finalizing a commit
+
+Sometimes a file is added to the index by accident and should remain in your working directory without being included in the next commit.
+
+```powershell
+echo "draft notes" > temp.txt
+git add temp.txt
+git status --short
+git restore --staged temp.txt
+git status --short
+```
+
+After `git restore --staged`, the file is no longer staged, but the content still remains in the working directory. This lets you keep editing without committing the file yet. If you want to remove the file completely, you can also run:
+
+```powershell
+git restore temp.txt
+```
+
+This is a useful step when reviewing changes before deciding what belongs in the next commit.
